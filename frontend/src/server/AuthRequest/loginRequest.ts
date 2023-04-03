@@ -21,6 +21,7 @@ export const loginRequest = async (values: any, toast: any) => {
     }
     return res;
   } catch (err: any) {
+    console.log(err);
     if (err.response.status === 404) {
       toast({
         title: 'Error',

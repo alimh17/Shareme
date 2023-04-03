@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import Conversation from './Conversation';
 import Chat from './Chat';
 
-const socket = io('ws://localhost:3001');
+const socket = io('https://shareme-backend.iran.liara.run/');
 
 const Chats: React.FC = (): JSX.Element => {
   const user = useSelector((state: any) => state.User.user);

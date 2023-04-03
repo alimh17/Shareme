@@ -41,8 +41,8 @@ const Posts: React.FC<Props> = () => {
   useEffect(() => {
     getUserPostsRequest(page, user?.username).then((data) => {
       setPosts(data?.posts);
-      setHasMore(data.next);
-      data.next ? setPage(page + 1) : setPage(0);
+      setHasMore(data?.next);
+      data?.next ? setPage(page + 1) : setPage(0);
     });
   }, [user, pathname]);
 

@@ -11,7 +11,7 @@ const Main: React.FC = (): JSX.Element => {
 
   useEffect(() => {
     getPostsRequest(page).then((data) => {
-      setPosts(data.posts);
+      setPosts(data?.posts);
       setHasMore(data.next);
       data.next ? setPage(page + 1) : setPage(0);
     });

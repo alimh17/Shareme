@@ -7,7 +7,7 @@ const getUserPostsRequest = async (page: number, username: string): Promise<any>
   const shareme = localStorage.getItem('shareme');
   const token = shareme ? JSON.parse(shareme) : {};
   try {
-    const res = await axios.post(
+    const { data } = await axios.post(
       `${BASE_URL}post/user-posts`,
       { username },
       {
@@ -18,7 +18,7 @@ const getUserPostsRequest = async (page: number, username: string): Promise<any>
       },
     );
 
-    return res.data;
+    return data;
   } catch (err) {
     console.log(err);
   }
